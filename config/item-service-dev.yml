@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: item-service
+  cloud:
+    config:
+      override-none: true   
+    
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka,,http://eureka2:2002/eureka 
+ # 自己写只能写defaultZone，想改名需要云服务器供应商提供服务
