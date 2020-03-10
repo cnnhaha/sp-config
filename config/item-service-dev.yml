@@ -14,5 +14,8 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka1:2001/eureka,,http://eureka2:2002/eureka 
- # 自己写只能写defaultZone，想改名需要云服务器供应商提供服务
+      defaultZone: http://eureka1:2001/eureka,,http://eureka2:2002/eureka  # 自己写只能写defaultZone，想改名需要云服务器供应商提供服务
+  instance:
+    prefer-ip-address: true 
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port} 
+ 
